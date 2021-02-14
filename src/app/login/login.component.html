@@ -1,0 +1,67 @@
+<div class="login-container">
+    <mat-card>
+        <div *ngIf="!isLogin">
+            <h1>Registra tus datos</h1>
+            <form (ngSubmit)="addClient(registerForm.value)" [formGroup]="registerForm">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Nombre completo</mat-label>
+                    <input type="text" matInput formControlName="name" placeholder="Ingresar nombre completo">
+                    <mat-error
+                        *ngIf="registerForm.controls.name.errors?.required && (registerForm.controls.rut.touched)">
+                        Ingresar nombre completo
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Rut</mat-label>
+                    <input type="text" matInput formControlName="rut" placeholder="Ingresar rut">
+                    <mat-error
+                        *ngIf="registerForm.controls.name.errors?.required && (registerForm.controls.rut.touched)">
+                        Ingresar rut con formato válido: 11111111-1
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input type="email" matInput formControlName="email" placeholder="Ingresar correo electrónico">
+                    <mat-error
+                        *ngIf="registerForm.controls.name.errors?.required && (registerForm.controls.rut.touched)">
+                        Ingresar correo electrónico con formato válido: correo@correo.com
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Contraseña</mat-label>
+                    <input type="email" matInput formControlName="password" placeholder="Ingresar contraseña">
+                    <mat-error
+                        *ngIf="registerForm.controls.name.errors?.required && (registerForm.controls.rut.touched)">
+                        Ingresar contraseña para creación de cuenta
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit">Registrarse</button>
+                <p>¿Ya tienes cuenta? Puedes ingresar <span (click)="changeToLoginMode(true)">aquí</span></p>
+            </form>
+        </div>
+        <div *ngIf="isLogin">
+            <form (ngSubmit)="loginClient(registerForm.value)" [formGroup]="registerForm">
+                <h1>Ingresa tus datos</h1>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Rut</mat-label>
+                    <input type="text" matInput formControlName="rut" placeholder="Ingresar rut">
+                    <mat-error
+                        *ngIf="registerForm.controls.name.errors?.required && (registerForm.controls.rut.touched)">
+                        Ingresar rut con formato válido: 11111111-1
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Contraseña</mat-label>
+                    <input type="email" matInput formControlName="password" placeholder="Ingresar contraseña">
+                    <mat-error
+                        *ngIf="registerForm.controls.name.errors?.required && (registerForm.controls.rut.touched)">
+                        Ingresar contraseña para creación de cuenta
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit">Registrarse</button>
+                <p>¿Aún no tienes cuenta? Puedes registrarte <span (click)="changeToLoginMode(false)">aquí</span></p>
+            </form>
+        </div>
+    </mat-card>
+</div>

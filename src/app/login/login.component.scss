@@ -1,0 +1,14 @@
+.login-container {
+    width: 100%;
+    mat-card {
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            mat-form-field {
+                width: 80%;
+            }
+        }
+    }
+}

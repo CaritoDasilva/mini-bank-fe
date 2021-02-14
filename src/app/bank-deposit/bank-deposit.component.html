@@ -1,0 +1,13 @@
+<div class="deposit-container">
+    <h1>Depósito</h1>
+    <form (ngSubmit)="updateAmount(depositForm.value, $event)" [formGroup]="depositForm">
+        <mat-form-field class="example-full-width">
+            <mat-label>Nombre completo</mat-label>
+            <input type="number" matInput formControlName="amount" placeholder="Ingresar monto a depositar">
+            <mat-error *ngIf="depositForm.controls.amount.errors?.required && (depositForm.controls.rut.touched)">
+                Ingresar monto a depositar
+            </mat-error>
+        </mat-form-field>
+    </form>
+
+</div>

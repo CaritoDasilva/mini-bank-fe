@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mini-bank-fe';
+  openSidenav: boolean;
+
+  constructor() {
+    this.openSidenav = true;
+  }
 }
