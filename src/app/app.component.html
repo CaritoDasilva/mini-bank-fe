@@ -29,13 +29,14 @@
                 <li (click)="goToForm(1)">Depósito</li>
                 <li (click)="goToForm(2)">Retiro</li>
                 <li (click)="goToForm(3)">Transferencias</li>
+                <li (click)="goToAccountDetail()">Resumen de Movimientos</li>
             </ul>
         </div>
     </mat-sidenav>
 
     <mat-sidenav-content>
         <router-outlet></router-outlet>
-        <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
+        <!-- <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p> -->
 
     </mat-sidenav-content>
 </mat-sidenav-container>

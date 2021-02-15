@@ -26,4 +26,8 @@ export class AppComponent {
     console.log("🚀 ~ file: app.component.ts ~ line 22 ~ AppComponent ~ goToForm ~ this.formContent", this.formContent)
     this.router.navigate(['/deposito']);
   }
+
+  goToAccountDetail() {
+    this.router.navigateByUrl('/dashboard')
+  }
 }

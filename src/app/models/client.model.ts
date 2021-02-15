@@ -4,6 +4,7 @@ export class Client {
     email: string;
     rut: string;
 
+
     constructor(name: string, email: string, rut: string, password?: string) {
         this.name = name;
         this.email = email;
