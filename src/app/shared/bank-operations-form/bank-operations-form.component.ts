@@ -34,23 +34,20 @@ export class BankOperationsFormComponent implements OnInit {
 
   async updateAmount(form: FormGroup, e: Event) {
     if (this.formContent?.operation_type === 'transfer') {
-      // this.bankOperationsService.setFormContent(
-      //   { ...this.formContent, amount_to_update: form.value.amount, destination_client_account: form.value.destination_client_account });
       this.bankOperationsService.updateClientAccountByTransfer({ ...this.formContent, amount_to_update: form.value.amount, destination_client_account: form.value.destination_client_account }).subscribe(data => {
         if (data) {
+          this.depositForm.patchValue({ amount: null, destination_client_account: '' })
           return data;
         } else {
           return this.gralError = 'Operación fallida';
         }
       })
-      console.log("🚀 ~ file: bank-operations-form.component.ts ~ line 33 ~ BankOperationsFormComponent ~ this.bankOperationsService.updateClientAccount ~ data", this.formContent)
 
     } else {
-      // this.bankOperationsService.setFormContent({ ...this.formContent, amount_to_update: form.value.amount })
 
       this.bankOperationsService.updateClientAccount({ ...this.formContent, amount_to_update: form.value.amount }).subscribe(data => {
         if (data) {
-          console.log("🚀 ~ file: bank-operations-form.component.ts ~ line 33 ~ BankOperationsFormComponent ~ this.bankOperationsService.updateClientAccount ~ data", data)
+          this.depositForm.patchValue({ amount: null })
           return data;
         } else {
           return this.gralError = 'Operación fallida';

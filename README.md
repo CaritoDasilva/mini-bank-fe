@@ -1,27 +1,45 @@
 # MiniBankFe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+# Links
 
-## Development server
+| Plataforma | Links |
+| ------ | ------ |
+| GitHub | https://github.com/CaritoDasilva/mini-bank-fe |
+| Deploy | http://mini-bank-fe.s3-website.us-east-2.amazonaws.com/ |
+| Portafolio | https://www.caritodasilva.work/ |
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Implementación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> Se construyó un front que muestra una aplicación que gestiona operaciones bancarias. Permite visualizar el historial de operaciones del usuario, realizar depósitos y retiros, así como transferencias a terceros.
+> Para los estilos se realizaron algunos con SASS, Bootstrap y Angular Material.
+> Por último mencionar que se realizó el front end con Angular 11.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Instalación
 
-## Running unit tests
+Instalación de dependencias
+```sh
+$ npm i
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para correr el proyecto
 
-## Running end-to-end tests
+```sh
+$ ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Para correr test unitarios
 
-## Further help
+```sh
+$ ng test
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para realizar el build a producción
+
+```sh
+$ ng build --prod
+```
+
+
+
