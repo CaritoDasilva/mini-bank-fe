@@ -16,13 +16,21 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BankDepositComponent } from './bank-deposit/bank-deposit.component';
+import { WithdrawalComponent } from './withdrawal/withdrawal.component';
+import { WireTransferComponent } from './wire-transfer/wire-transfer.component';
+import { BankOperationsFormComponent } from './shared/bank-operations-form/bank-operations-form.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    BankDepositComponent
+    BankDepositComponent,
+    WithdrawalComponent,
+    WireTransferComponent,
+    BankOperationsFormComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

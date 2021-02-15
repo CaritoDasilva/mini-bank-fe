@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { BankOprations } from '../models/bank-oprations.model';
+import { BankOperationsService } from '../services/bank-operations.service';
 
 @Component({
   selector: 'app-bank-deposit',
@@ -7,19 +11,27 @@ import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '
   styleUrls: ['./bank-deposit.component.scss']
 })
 export class BankDepositComponent implements OnInit {
-  depositForm: FormGroup;
-  constructor() {
-    this.depositForm = new FormGroup({
-      amount: new FormControl(0, Validators.required)
+  formContent: any;
+
+  constructor(public route: ActivatedRoute, private bankOperationsService: BankOperationsService) {
+    this.bankOperationsService.getFormContent().subscribe(data => {
+      this.formContent = data;
     })
+
   }
 
   ngOnInit(): void {
   }
 
-  updateAmount(form: FormGroup, e: Event) {
-    console.log("🚀 ~ file: bank-deposit.component.ts ~ line 21 ~ BankDepositComponent ~ updateAmount ~ form", form)
+  ngOnChanges(): void {
 
   }
+
+
+
+
+
+
+
 
 }

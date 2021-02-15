@@ -1,0 +1,20 @@
+<h1>{{ formContent.title_operation }}</h1>
+<form (ngSubmit)="updateAmount(depositForm, $event)" [formGroup]="depositForm">
+    <mat-form-field class="example-full-width">
+        <mat-label>{{ formContent.label_operation }}</mat-label>
+        <input type="number" matInput formControlName="amount" placeholder="Ingresar monto a depositar">
+        <mat-error *ngIf="depositForm.controls.amount.errors?.required && (depositForm.controls.amount.touched)">
+            Ingresar monto a depositar
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" *ngIf="formContent?.operation_type === 'transfer'">
+        <mat-label>Rut Destinatario</mat-label>
+        <input type="text" matInput formControlName="destination_client_account"
+            placeholder="Ingresar rut de destinatario">
+        <mat-error
+            *ngIf="depositForm.controls.destination_client_account.errors?.required && (depositForm.controls.destination_client_account.touched)">
+            Ingresar monto a depositar
+        </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Aceptar</button>
+</form>

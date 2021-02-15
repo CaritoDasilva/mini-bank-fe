@@ -1,6 +1,8 @@
 mat-sidenav-container {
     height: 100vh;
     mat-sidenav {
+        background-color: #673ab7;
+        color: #fff;
         width: 300px;
         .menu-options {
             margin: 5%;
