@@ -1,4 +1,6 @@
-<h1>{{ formContent.title_operation }}</h1>
+<div class="title">
+    <h1>{{ formContent.title_operation }}</h1>
+</div>
 <form (ngSubmit)="updateAmount(depositForm, $event)" [formGroup]="depositForm">
     <mat-form-field class="example-full-width">
         <mat-label>{{ formContent.label_operation }}</mat-label>

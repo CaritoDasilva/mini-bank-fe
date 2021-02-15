@@ -29,16 +29,16 @@ export class BankOperationsService {
 
 
   updateClientAccount(form: BankOprations) {
-    const url = `http://localhost:8000/api/accounts/update/${this.rutClient}/`;
+    const url = `http://18.222.204.233/api/accounts/update/${this.rutClient}/`;
     return this.http.put(url, form);
   }
 
   updateClientAccountByTransfer(form: BankOprations) {
-    return this.http.put('http://localhost:8000/api/accounts/transfer', form);
+    return this.http.put('http://18.222.204.233/api/accounts/transfer', form);
   }
 
   getAccountByRut() {
-    const url = `http://localhost:8000/api/accounts/${this.rutClient}`
+    const url = `http://18.222.204.233/api/accounts/${this.rutClient}`
     return this.http.get(url)
       .pipe(
         map((data) => {

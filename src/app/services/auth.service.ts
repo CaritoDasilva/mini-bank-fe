@@ -13,11 +13,11 @@ export class AuthService {
 
 
   registerClient(clientData: Client) {
-    return this.http.post('http://localhost:8000/api/clients/new', clientData);
+    return this.http.post('http://18.222.204.233/api/clients/new', clientData);
   }
 
   loginClient(rut: string, password: string) {
     const headers = new HttpHeaders({ "Authorization": password })
-    return this.http.get(`http://localhost:8000/api/clients/${rut}`, { headers: headers });
+    return this.http.get(`http://18.222.204.233/api/clients/${rut}`, { headers: headers });
   }
 }

@@ -1,7 +1,9 @@
 <div class="login-container">
     <mat-card>
         <div *ngIf="!isLogin">
-            <h1>Registra tus datos</h1>
+            <div class="title">
+                <h1>Registra tus datos</h1>
+            </div>
             <form (ngSubmit)="addClient(registerForm.value)" [formGroup]="registerForm">
                 <mat-form-field class="example-full-width">
                     <mat-label>Nombre completo</mat-label>
@@ -40,14 +42,16 @@
                         Ingresar contraseña para creación de cuenta
                     </mat-error>
                 </mat-form-field>
-                <button mat-raised-button color="primary" type="submit"
+                <button class="btn-next" mat-raised-button color="primary" type="submit"
                     [disabled]="!registerForm.valid">Registrarse</button>
                 <p>¿Ya tienes cuenta? Puedes ingresar <span (click)="changeToLoginMode(true)">aquí</span></p>
             </form>
         </div>
         <div *ngIf="isLogin">
-            <form (ngSubmit)="loginClient(loginForm.value)" [formGroup]="loginForm">
+            <div class="title">
                 <h1>Ingresa tus datos</h1>
+            </div>
+            <form (ngSubmit)="loginClient(loginForm.value)" [formGroup]="loginForm">
                 <mat-form-field class="example-full-width">
                     <mat-label>Rut</mat-label>
                     <input type="text" matInput formControlName="rut" placeholder="Ingresar rut">
@@ -69,7 +73,8 @@
                         Ingresar contraseña para creación de cuenta
                     </mat-error>
                 </mat-form-field>
-                <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Ingresar</button>
+                <button class="btn-next" mat-raised-button color="primary" type="submit"
+                    [disabled]="!loginForm.valid">Ingresar</button>
                 <p>¿Aún no tienes cuenta? Puedes registrarte <span (click)="changeToLoginMode(false)">aquí</span></p>
             </form>
         </div>

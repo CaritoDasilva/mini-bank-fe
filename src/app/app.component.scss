@@ -1,17 +1,32 @@
-mat-sidenav-container {
-    height: 100vh;
-    mat-sidenav {
-        background-color: #673ab7;
-        color: #fff;
-        width: 300px;
-        .menu-options {
-            margin: 5%;
+// mat-sidenav-container {
+//     height: 100vh;
+//     mat-sidenav {
+//         background-color: #673ab7;
+//         color: #fff;
+//         width: 300px;
+//         .menu-options {
+//             margin: 5%;
+//         }
+//     }
+//     mat-sidenav-content {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//     }
+// }
+
+.gral-container {
+    margin: 5%;
+    ul.dropdown-menu {
+        .li-navbar {
+            .link.link {
+                cursor: pointer!important;
+                &.link {
+
+                }
+            }
+
         }
-    }
-    mat-sidenav-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 }
