@@ -1,14 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Client } from '../models/client.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  // headers: HttpHeaders
+  private isLogged: BehaviorSubject<boolean>;
   constructor(private http: HttpClient) {
+    this.isLogged = new BehaviorSubject<boolean>(false);
 
+  }
+
+  getIsLogged() {
+    return this.isLogged.asObservable();
+  }
+
+  setisLogged() {
+    this.isLogged.next(!localStorage.getItem('user') ? false : true);
   }
 
 

@@ -4,7 +4,8 @@
 <form (ngSubmit)="updateAmount(depositForm, $event)" [formGroup]="depositForm">
     <mat-form-field class="example-full-width">
         <mat-label>{{ formContent.label_operation }}</mat-label>
-        <input type="number" matInput formControlName="amount" placeholder="Ingresar monto a depositar">
+        <input type="number" matInput formControlName="amount" placeholder="Ingresar monto a depositar"
+            value={depositForm.value.amount}>
         <mat-error *ngIf="depositForm.controls.amount.errors?.required && (depositForm.controls.amount.touched)">
             Ingresar monto a depositar
         </mat-error>
@@ -18,5 +19,6 @@
             Ingresar monto a depositar
         </mat-error>
     </mat-form-field>
-    <button mat-raised-button color="primary" type="submit">Aceptar</button>
+    <button class="accept-btn" [disabled]="!depositForm.valid" mat-raised-button color="primary"
+        type="submit">Aceptar</button>
 </form>

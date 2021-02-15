@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   gralError: string;
   hide = true;
   constructor(private authService: AuthService, public router: Router) {
-    this.isLogin = false;
+    this.isLogin = true;
     this.gralError = ''
     this.registerForm = new FormGroup({
       name: new FormControl('', Validators.required),
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   addClient(form: Client) {
     this.authService.registerClient(form).subscribe((data: any) => {
       if (data) {
-        this.router.navigateByUrl("/dashboard");
+        this.isLogin = true;
         return data;
       } else {
         return this.gralError = 'No se ha podido registrar cliente'
@@ -48,8 +48,14 @@ export class LoginComponent implements OnInit {
 
   loginClient(form: IFormLogin) {
     this.authService.loginClient(form.rut, form.password).subscribe((data: any) => {
-      if (data) {
-        localStorage.setItem('user', form.rut)
+      if (data.client) {
+        let user = {
+          name: data.client.name,
+          rut: data.client.rut,
+          email: data.client.email
+        }
+        localStorage.setItem('user', JSON.stringify(user))
+        this.authService.setisLogged();
         this.router.navigateByUrl("/dashboard");
         return data;
       } else {

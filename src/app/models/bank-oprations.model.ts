@@ -33,7 +33,7 @@ export class BankOprations {
             this.operation_type = 'transfer';
             this.isDeposit = true;
             this.amount_to_update = 0;
-            this.operation_owner = !localStorage.getItem('user') ? '' : localStorage.getItem('user');
+            this.operation_owner = !localStorage.getItem('user') ? '' : JSON.parse(String(localStorage.getItem('user'))).rut;
             this.destination_client_account = '';
         }
 

@@ -1,28 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Menu
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li class="li-navbar"><a class="dropdown-item link" (click)="goToForm(1)">Depósito</a></li>
-                    <li class="li-navbar"><a class="dropdown-item link" (click)="goToForm(2)">Retiro</a></li>
-                    <li class="li-navbar"><a class="dropdown-item link" (click)="goToForm(3)">Transferencias</a></li>
-                    <li class="li-navbar"><a class="dropdown-item link" (click)="goToAccountDetail()">Resumen de
-                            Movimientos</a></li>
+<ng-container *ngIf="isLogged">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav bank-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Menu
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li class="li-navbar"><a class="dropdown-item link" (click)="goToForm(1)">Depósito</a></li>
+                        <li class="li-navbar"><a class="dropdown-item link" (click)="goToForm(2)">Retiro</a></li>
+                        <li class="li-navbar"><a class="dropdown-item link" (click)="goToForm(3)">Transferencias</a>
+                        </li>
+                        <li class="li-navbar"><a class="dropdown-item link" (click)="goToAccountDetail()">Resumen de
+                                Movimientos</a>
+                        </li>
+                        <li class="li-navbar"><a class="dropdown-item link" (click)="signOut()">Cerrar sesión</a></li>
+                    </ul>
+                </li>
+                <li *ngIf="name">Hola {{name}}!</li>
+            </ul>
 
-                </ul>
-            </li>
-        </ul>
-
-    </div>
-</nav>
+        </div>
+    </nav>
+</ng-container>
 <div class="gral-container container">
     <div class="col col-md-6 offset-md-3 col-sm-12">
         <router-outlet></router-outlet>

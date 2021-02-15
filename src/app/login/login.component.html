@@ -42,6 +42,7 @@
                         Ingresar contraseña para creación de cuenta
                     </mat-error>
                 </mat-form-field>
+                <mat-error> {{gralError}} </mat-error>
                 <button class="btn-next" mat-raised-button color="primary" type="submit"
                     [disabled]="!registerForm.valid">Registrarse</button>
                 <p>¿Ya tienes cuenta? Puedes ingresar <span (click)="changeToLoginMode(true)">aquí</span></p>
@@ -73,6 +74,7 @@
                         Ingresar contraseña para creación de cuenta
                     </mat-error>
                 </mat-form-field>
+                <mat-error> {{gralError}} </mat-error>
                 <button class="btn-next" mat-raised-button color="primary" type="submit"
                     [disabled]="!loginForm.valid">Ingresar</button>
                 <p>¿Aún no tienes cuenta? Puedes registrarte <span (click)="changeToLoginMode(false)">aquí</span></p>

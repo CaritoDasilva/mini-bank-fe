@@ -14,7 +14,7 @@ export class BankOperationsFormComponent implements OnInit {
   constructor(private bankOperationsService: BankOperationsService) {
     this.gralError = ''
     this.depositForm = new FormGroup({
-      amount: new FormControl(0, Validators.required),
+      amount: new FormControl(null, Validators.required),
       destination_client_account: new FormControl('', this.formContent?.operation_type === 'transfer' ? Validators.required : Validators.nullValidator)
     })
     console.log("🚀 ~ file: bank-operations-form.component.ts ~ line 15 ~ BankOperationsFormComponent ~ constructor ~ this.depositForm", this.depositForm)

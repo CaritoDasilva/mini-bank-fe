@@ -15,18 +15,34 @@
 //         align-items: center;
 //     }
 // }
+nav {
+    padding: 1%;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bolder;
+    color: #673ab7;
+    font-size: 20px;
+}
+
+ul.dropdown-menu {
+    .li-navbar {
+        .link.link {
+            cursor: pointer!important;
+        }
+
+    }
+}
+
+.navbar-nav.navbar-nav {
+    &.bank-nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+}
+
 
 .gral-container {
     margin: 5%;
-    ul.dropdown-menu {
-        .li-navbar {
-            .link.link {
-                cursor: pointer!important;
-                &.link {
-
-                }
-            }
-
-        }
-    }
 }

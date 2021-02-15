@@ -15,7 +15,7 @@ export class BankOperationsService {
   constructor(private http: HttpClient) {
     this.formContent = new BehaviorSubject<BankOprations>(new BankOprations(1))
     this.accountDetail = new BehaviorSubject<Account>(new Account('', 0, []))
-    this.rutClient = localStorage.getItem('user')
+    this.rutClient = localStorage.getItem('user') && JSON.parse(String(localStorage.getItem('user'))).rut;
   }
 
   getFormContent() {
